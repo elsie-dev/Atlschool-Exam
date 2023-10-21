@@ -10,3 +10,8 @@ chmod +x setup.sh
 ./setup.sh
 
 
+chmod +x lamp.sh
+./lamp.sh
+
+chmod +x phpconfig.sh
+sudo ./phpconfig.sh
