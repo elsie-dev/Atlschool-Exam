@@ -14,19 +14,13 @@ echo -e "\n\nInstalling PHP & Requirements\n"
 #sudo apt-get update
 #sudo apt-get install -y apache2 mysql-server php8.0 php8.0-mysql
 
-#php setup
-# Install PHP 8.0 and some common extensions
-wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
-echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
 
-# Update and upgrade again
+sudo apt install apt-transport-https lsb-release ca-certificates wget -y
+sudo wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg 
+sudo sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list'
 sudo apt update
-sudo apt upgrade -y
 
-# Install PHP 8 and modules
-php8_and_modules="php8.1 libapache2-mod-php8.1 php8.1-cli php8.1-common php8.1-mysql php8.1-xml php8.1-xmlrpc php8.1-curl php8.1-gd php8.1-imagick php8.1-cli php8.1-dev php8.1-imap php8.1-mbstring php8.1-opcache php8.1-soap php8.1-zip php8.1-intl php8.1-bcmath"
-apt install -y $php8_and_modules
-
+sudo apt install libapache2-mod-php8.2
 
 echo -e "\n\nPermissions for /var/www\n"
 sudo chown -R www-data:www-data /var/www
