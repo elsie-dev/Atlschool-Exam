@@ -3,7 +3,7 @@
 
 Vagrant.configure("2") do |config|
   config.vm.define "master" do |master|
-    master.vm.box = "ubuntu/bionic64"
+    master.vm.box = "debian/buster64"
     master.vm.hostname = "Master"
     master.vm.network "private_network", type: "dhcp"
     master.vm.provider "virtualbox" do |vb|
@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
 
 
   config.vm.define "slave" do |slave|
-    slave.vm.box = "ubuntu/bionic64"
+    slave.vm.box = "debian/buster64"
     slave.vm.hostname = "Slave"
     slave.vm.network "private_network", type: "dhcp"
     slave.vm.provider "virtualbox" do |vb|
