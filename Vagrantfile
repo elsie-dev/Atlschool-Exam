@@ -12,6 +12,8 @@ Vagrant.configure("2") do |config|
     end
   end
 
+
+
   config.vm.define "slave" do |slave|
     slave.vm.box = "ubuntu/bionic64"
     slave.vm.hostname = "Slave"
