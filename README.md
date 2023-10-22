@@ -1,3 +1,4 @@
+## SUMMARY 
 Vagrantfile - This script automates provisioning of two Ubuntu servers, on master a bash script to deploy LAMP
 lampstack.sh - What this script does:
 
