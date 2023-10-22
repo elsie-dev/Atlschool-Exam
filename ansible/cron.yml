@@ -1,0 +1,11 @@
+---
+- name: Creating Cron Job for Uptime Check
+  hosts: hosts_to_add_key
+  become: true
+  tasks:
+    - name: Create a cron job to check uptime
+      cron:
+        name: Check Uptime
+        minute: 0
+        hour: 0
+        job: "uptime >> /var/log/uptime.log"
