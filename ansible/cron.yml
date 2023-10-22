@@ -9,3 +9,6 @@
         minute: 0
         hour: 0
         job: "uptime >> /var/log/uptime.log"
+
+  vars:
+      ansible_user: ubuntu
